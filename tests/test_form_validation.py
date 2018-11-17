@@ -20,3 +20,21 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertTrue(validation.name('James'))
+
+    def test_name_filled_two(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('James Christopher'))
+
+    def test_name_filled_three(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('James-Christopher'))
+
+    def test_name_filled_four(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('James-Christopher 3'))

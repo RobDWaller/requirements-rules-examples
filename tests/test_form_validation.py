@@ -14,3 +14,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertFalse(validation.name(''))
+
+    def test_name_filled(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('James'))

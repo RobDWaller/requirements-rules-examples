@@ -8,3 +8,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertIsInstance(validation, FormValidation)
+
+    def test_name_empty(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.name(''))

@@ -1,2 +1,5 @@
 class FormValidation:
-    pass
+
+    def name(self, name):
+
+        return False

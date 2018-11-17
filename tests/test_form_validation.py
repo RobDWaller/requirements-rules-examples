@@ -44,3 +44,33 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertFalse(validation.name('James!!'))
+
+    def test_last_name_filled(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('Johnson'))
+
+    def test_last_name_filled_two(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('Jo Johnson'))
+
+    def test_last_name_filled_three(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('Jo-Johnson'))
+
+    def test_last_name_filled_four(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.name('Johnson 3rd'))
+
+    def test_last_name_invalid(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.name('Johnson$'))

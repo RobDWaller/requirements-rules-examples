@@ -1,5 +1,10 @@
+import re
+
 class FormValidation:
 
     def name(self, name):
 
-        return name
+        if re.match('^[a-zA-Z0-9\s\-]+$', name):
+            return True
+
+        return False

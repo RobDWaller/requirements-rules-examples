@@ -38,3 +38,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertTrue(validation.name('James-Christopher 3'))
+
+    def test_name_invalid(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.name('James!!'))

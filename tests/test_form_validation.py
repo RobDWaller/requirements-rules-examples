@@ -86,3 +86,15 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertTrue(validation.email('jessica.smith@gmail.com'))
+
+    def test_email_filled_two(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.email('jessica@myemail.co.uk'))
+
+    def test_email_filled_three(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.email('jessica123@big-email.co'))

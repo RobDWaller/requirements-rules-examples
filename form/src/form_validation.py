@@ -8,3 +8,7 @@ class FormValidation:
             return True
 
         return False
+
+    def email(self, email):
+
+        return False

@@ -74,3 +74,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertFalse(validation.name('Johnson$'))
+
+    def test_email_fail(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.email(''))

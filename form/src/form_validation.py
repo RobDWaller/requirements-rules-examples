@@ -11,4 +11,4 @@ class FormValidation:
 
     def email(self, email):
 
-        return False
+        return email

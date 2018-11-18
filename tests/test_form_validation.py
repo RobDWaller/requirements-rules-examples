@@ -121,4 +121,10 @@ class TestFormValidation(unittest.TestCase):
 
         validation = FormValidation()
 
-        self.assertTrue(validation.date_of_birth('17/11/2018'))
+        self.assertTrue(validation.date_of_birth('24/05/1995'))
+
+    def test_date_of_birth_invalid(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.date_of_birth('1995/05/24'))

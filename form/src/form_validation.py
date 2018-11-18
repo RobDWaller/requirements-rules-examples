@@ -18,4 +18,7 @@ class FormValidation:
 
     def date_of_birth(self, dob):
 
-        return True 
+        if re.match('^[0-9]{2}/[0-9]{2}/[0-9]{4}$', dob):
+            return True
+
+        return False

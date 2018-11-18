@@ -11,4 +11,7 @@ class FormValidation:
 
     def email(self, email):
 
-        return email
+        if re.match('^[a-zA-Z0-9\s\-\.]+\@[a-zA-Z0-9\s\-\.]+$', email):
+            return True
+
+        return False

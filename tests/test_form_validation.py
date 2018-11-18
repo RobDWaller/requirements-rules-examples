@@ -140,3 +140,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertFalse(validation.date_of_birth('24/5/1995'))
+
+    def test_date_of_birth_low_range(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.date_of_birth('31/12/1899'))

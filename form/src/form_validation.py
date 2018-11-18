@@ -19,6 +19,12 @@ class FormValidation:
     def date_of_birth(self, dob):
 
         if re.match('^[0-9]{2}/[0-9]{2}/[0-9]{4}$', dob):
+
+            parts = dob.split('/')
+
+            if int(parts[2]) < 1900:
+                return False
+                
             return True
 
         return False

@@ -15,3 +15,7 @@ class FormValidation:
             return True
 
         return False
+
+    def date_of_birth(self, dob):
+
+        return True 

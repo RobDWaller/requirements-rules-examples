@@ -116,3 +116,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertFalse(validation.email('jessica@out look.com'))
+
+    def test_date_of_birth(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.date_of_birth('17/11/2018'))

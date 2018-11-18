@@ -1,5 +1,6 @@
-from form.src.form_validation import FormValidation
 import unittest
+from datetime import timedelta, date
+from form.src.form_validation import FormValidation
 
 class TestFormValidation(unittest.TestCase):
 
@@ -146,3 +147,11 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertFalse(validation.date_of_birth('31/12/1899'))
+
+    def test_date_of_birth_high_range(self):
+
+        validation = FormValidation()
+
+        date_string = date.today() + timedelta(days=1)
+
+        self.assertFalse(validation.date_of_birth(date_string.strftime('%d/%m/%Y')))

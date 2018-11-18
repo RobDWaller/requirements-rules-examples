@@ -1,3 +1,4 @@
+import datetime
 import re
 
 class FormValidation:
@@ -20,11 +21,14 @@ class FormValidation:
 
         if re.match('^[0-9]{2}/[0-9]{2}/[0-9]{4}$', dob):
 
-            parts = dob.split('/')
+            dob_object = datetime.datetime.strptime(dob, '%d/%m/%Y')
 
-            if int(parts[2]) < 1900:
+            if dob_object.date() < datetime.datetime.strptime('01/01/1900', '%d/%m/%Y').date():
                 return False
-                
+
+            if dob_object.date() > datetime.datetime.now().date():
+                return False
+
             return True
 
         return False

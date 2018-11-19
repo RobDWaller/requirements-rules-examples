@@ -35,4 +35,4 @@ class FormValidation:
 
     def terms_conditions(self, terms_conditions):
 
-        return True
+        return terms_conditions == 'on'

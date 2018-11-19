@@ -161,3 +161,9 @@ class TestFormValidation(unittest.TestCase):
         validation = FormValidation()
 
         self.assertTrue(validation.terms_conditions('on'))
+
+    def test_terms_conditions_invalid(self):
+
+        validation = FormValidation()
+
+        self.assertFalse(validation.terms_conditions(''))

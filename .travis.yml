@@ -11,8 +11,8 @@ install:
 
 script:
     - python -m unittest discover tests/
-    - python -m radon cc form
-    - python -m pylint form
+    - python -m radon cc main.py form
+    - python -m pylint main.py form
     - coverage run --source form/ -m unittest discover tests/
 
 after_success:

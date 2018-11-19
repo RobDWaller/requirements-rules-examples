@@ -11,19 +11,19 @@
             <form method="post">
                 <fieldset>
                     <label for="firstname">First Name:</label>
-                    <input type="text" name="firstname" id="firstname">
+                    <input type="text" name="firstname" id="firstname" value="{{ form.firstname if form != NONE }}">
                 </fieldset>
                 <fieldset>
                     <label for="lastname">Last Name:</label>
-                    <input type="text" name="lastname" id="lastname">
+                    <input type="text" name="lastname" id="lastname" value="{{ form.lastname if form != NONE }}">
                 </fieldset>
                 <fieldset>
                     <label for="email">Email:</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" value="{{ form.email if form != NONE }}">
                 </fieldset>
                 <fieldset>
                     <label for="dob">Date of Birth:</label>
-                    <input type="text" name="dob" id="dob">
+                    <input type="text" name="dob" id="dob" value="{{ form.dob if form != NONE }}" placeholder="dd/mm/yyyy">
                 </fieldset>
                 <fieldset>
                     <label for="tac">I have read and accept both the terms and conditions and privacy policy:</label>

@@ -155,3 +155,9 @@ class TestFormValidation(unittest.TestCase):
         date_string = date.today() + timedelta(days=1)
 
         self.assertFalse(validation.date_of_birth(date_string.strftime('%d/%m/%Y')))
+
+    def test_terms_conditions(self):
+
+        validation = FormValidation()
+
+        self.assertTrue(validation.terms_conditions('on'))

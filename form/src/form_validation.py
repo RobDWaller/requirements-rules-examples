@@ -32,3 +32,7 @@ class FormValidation:
             return True
 
         return False
+
+    def terms_conditions(self, terms_conditions):
+
+        return True

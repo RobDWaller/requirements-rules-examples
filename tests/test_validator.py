@@ -14,3 +14,17 @@ class TestValidator(unittest.TestCase):
         )
 
         self.assertIsInstance(validator, Validator)
+
+    def test_validate(self):
+
+        validator = Validator(
+            'firstname',
+            'lastname',
+            'rob@test.com',
+            '18/11/2018',
+            'on'
+        )
+
+        result = validator.validate()
+
+        self.assertTrue(result['result'])

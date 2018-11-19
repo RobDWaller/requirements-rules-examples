@@ -28,6 +28,7 @@ class TestValidator(unittest.TestCase):
         result = validator.validate()
 
         self.assertTrue(result['result'])
+        self.assertEqual(len(result['messages']), 0)
 
     def test_validate_invalid_firstname(self):
 
@@ -43,6 +44,7 @@ class TestValidator(unittest.TestCase):
 
         self.assertFalse(result['result'])
         self.assertEqual(result['messages'][0], 'Please fill in a valid first name only alpha numeric characters, spaces and dashes allowed.')
+        self.assertEqual(len(result['messages']), 1)
 
     def test_validate_invalid_lastname(self):
 
@@ -58,6 +60,7 @@ class TestValidator(unittest.TestCase):
 
         self.assertFalse(result['result'])
         self.assertEqual(result['messages'][0], 'Please fill in a valid last name only alpha numeric characters, spaces and dashes allowed.')
+        self.assertEqual(len(result['messages']), 1)
 
     def test_validate_invalid_email(self):
 
@@ -73,6 +76,7 @@ class TestValidator(unittest.TestCase):
 
         self.assertFalse(result['result'])
         self.assertEqual(result['messages'][0], 'Please fill in a valid email.')
+        self.assertEqual(len(result['messages']), 1)
 
     def test_validate_invalid_dob(self):
 
@@ -88,6 +92,7 @@ class TestValidator(unittest.TestCase):
 
         self.assertFalse(result['result'])
         self.assertEqual(result['messages'][0], 'Please fill in a valid date of birth, format day/month/year, after 1900 and before or equal to today.')
+        self.assertEqual(len(result['messages']), 1)
 
     def test_validate_invalid_tscs(self):
 
@@ -103,3 +108,22 @@ class TestValidator(unittest.TestCase):
 
         self.assertFalse(result['result'])
         self.assertEqual(result['messages'][0], 'Please agree to our terms and conditions and privacy policy.')
+        self.assertEqual(len(result['messages']), 1)
+
+    def test_validate_invalid_multiple(self):
+
+        validator = Validator(
+            'firstname',
+            'lastname!',
+            'robest.com',
+            '18/11/2018',
+            ''
+        )
+
+        result = validator.validate()
+
+        self.assertFalse(result['result'])
+        self.assertEqual(result['messages'][0], 'Please fill in a valid last name only alpha numeric characters, spaces and dashes allowed.')
+        self.assertEqual(result['messages'][1], 'Please fill in a valid email.')
+        self.assertEqual(result['messages'][2], 'Please agree to our terms and conditions and privacy policy.')
+        self.assertEqual(len(result['messages']), 3)

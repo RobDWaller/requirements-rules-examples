@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Sign Up Complete</h1>
-<p>{{ data['form'].firstname }} {{ data['form'].lastname }} we look forward to seeing you at our event.</p>
+<h1>Thank You For Signing up to Our Event</h1>
+<p>{{ data['form'].firstname }} {{ data['form'].lastname }} we look forward to seeing you soon.</p>
+<p>We will email further details to your address {{ data['form'].email }}. Please check your spam folder if you don't receive anything.</p>
 {% endblock %}

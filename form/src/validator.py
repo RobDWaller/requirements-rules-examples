@@ -35,17 +35,17 @@ class Validator:
 
         if form_validation.name(self.first_name) is False:
             result['result'] = False
-            result['messages'].append('''
-                Please fill in a valid first name only alpha numeric characters,
-                spaces and dashes allowed.
-            ''')
+            result['messages'].append((
+                'Please fill in a valid first name only alpha numeric characters, '
+                'spaces and dashes allowed.'
+            ))
 
         if form_validation.name(self.last_name) is False:
             result['result'] = False
-            result['messages'].append('''
-                Please fill in a valid last name only alpha numeric characters,
-                spaces and dashes allowed.
-            ''')
+            result['messages'].append((
+                'Please fill in a valid last name only alpha numeric characters, '
+                'spaces and dashes allowed.'
+            ))
 
         if form_validation.email(self.email) is False:
             result['result'] = False
@@ -53,15 +53,15 @@ class Validator:
 
         if form_validation.date_of_birth(self.date_of_birth) is False:
             result['result'] = False
-            result['messages'].append('''
-                Please fill in a valid date of birth, format day/month/year,
-                after 1900 and before or equal to today.
-            ''')
+            result['messages'].append((
+                'Please fill in a valid date of birth, format day/month/year, '
+                'after 1900 and before or equal to today.'
+            ))
 
         if form_validation.terms_conditions(self.terms_conditions) is False:
             result['result'] = False
-            result['messages'].append('''
-                Please agree to our terms and conditions and privacy policy.
-            ''')
+            result['messages'].append((
+                'Please agree to our terms and conditions and privacy policy.'
+            ))
 
         return result
